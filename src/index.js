@@ -1,13 +1,26 @@
 import React from 'react';
+import '../node_modules/font-awesome/css/font-awesome.min.css'; 
+import { BrowserRouter} from "react-router-dom";
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware} from "redux";
+import reducer from "./store/reducer/reducer";
+import thunk from 'redux-thunk';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './Styles/index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-
+const store = createStore(reducer, applyMiddleware(thunk)); 
 ReactDOM.render(
-  <React.StrictMode>
+  // <React.StrictMode>
+  <Provider store={store}>
+    <BrowserRouter>
     <App />
-  </React.StrictMode>,
+    </BrowserRouter>
+ 
+  </Provider>
+   
+  // </React.StrictMode>
+   ,
   document.getElementById('root')
 );
 

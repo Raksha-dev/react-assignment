@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "./Styles/CommonStyles.css";
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware} from "redux";
+import reducer from "./store/reducer/reducer";
+import Routes from './Routes/Routes';
+import thunk from 'redux-thunk';
+import { composeWithDevTools } from "redux-devtools-extension";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  
+  render() {
+    const store = createStore(reducer, applyMiddleware(thunk));
+    
+    return (
+      <Provider store={store}>
+        
+          <Router>
+          <div className="wrapper">
+            <div className="App">
+                <Routes />
+            </div>
+          </div>
+          </Router>
+      </Provider>
+    );
+  }
 }
 
 export default App;
