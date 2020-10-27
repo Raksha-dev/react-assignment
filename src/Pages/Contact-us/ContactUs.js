@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import React from "react";
+// import React, { } from "react";
 import Header from "../../Common-Components/Header/Header";
 import Footer from "../../Common-Components/Footer/Footer";
 import Mapedgeimage from "../../Assets/Images/download.jpg";
@@ -18,9 +19,8 @@ import { Phoneicon } from "./Style";
 import { Containertwo } from "./Style";
 import { Inputform } from "./Style";
 import { Messagebox } from "./Style";
-
-class contactus extends Component {
-  render() {
+import Contact from './contact';
+const contactus = () => {
     return (
       <>
         <Header />
@@ -78,23 +78,12 @@ class contactus extends Component {
             </Contactlist>
           </Container>
         <Containertwo>
-            <h2>Contact Form</h2>
-            <Inputform>
-            <input placeholder="Your Name" required="true" style={{marginRight:"30px"}}></input>
-            <input placeholder="Email Address" required="true"></input>
-            </Inputform>
-            <Inputform>
-            <input placeholder="Subject" required="true"></input>
-            </Inputform>
-            <Messagebox>
-            <input placeholder="Message" required="true"></input>
-            </Messagebox>
-            <button>SUBMIT MESSAGE</button>
+          <Contact />
         </Containertwo>
         </Contactform>
         <Footer />
       </>
     );
   }
-}
+
 export default contactus;

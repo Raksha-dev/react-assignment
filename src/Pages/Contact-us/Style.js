@@ -103,6 +103,7 @@ export const Containertwo = styled.div`
     margin: 0;
   }
   & button {
+    padding: 11px 72px !important;
     font-size: 13px;
     outline: none;
     background-color: transparent;
@@ -124,6 +125,27 @@ export const Inputform = styled.div`
     display: block;
   }
   & input {
+    max-width: 100%;
+    padding: 10px 283px 10px 24px;
+    margin-right: 30px;
+    outline: none;
+    font-size: 15px;
+    color: #909090;
+    margin: 0 0 20px 0;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+    background-color: #fff;
+    font-weight: 500;
+    border: 1px solid #e0e0e0;
+    opacity: 1;
+    min-height: 53px;
+    border-radius: 3px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.03);
+  }
+  & textarea {
     max-width: 100%;
     padding: 10px 283px 10px 24px;
     margin-right: 30px;
